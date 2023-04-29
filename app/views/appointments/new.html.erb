@@ -1,0 +1,9 @@
+<h1>Appointments#new</h1>
+<%= simple_form_for [@pet, @appointment] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :reason %>
+  <%= f.association :doctor, collection: Doctor.where(available: true) %>
+
+
+  <%= f.submit "Create Appointment", class: "btn btn-primary" %>
+<% end %>
